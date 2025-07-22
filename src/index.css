@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fade-in-down {
+  from { opacity: 0; transform: translateY(-30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+.animate-fade-in { animation: fade-in 1s ease; }
+.animate-fade-in-down { animation: fade-in-down 1s ease; }
+.animate-fade-in-up { animation: fade-in-up 1s ease; }
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+.group:hover .animate-marquee {
+  animation-play-state: paused;
+}
+.skill-card {
+  transition: transform 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s;
+}
+.skill-card:hover {
+  transform: scale(1.12);
+  box-shadow: 0 0 24px 0 rgba(80, 0, 200, 0.25);
+  z-index: 2;
+}
