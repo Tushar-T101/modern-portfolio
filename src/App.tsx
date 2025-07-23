@@ -1,34 +1,48 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Hero from './components/Hero'
+import Experience from './components/Experience'
+import Projects from './components/Projects'
+import Contact from './components/Contact'
+import Skills from './components/Skills'
+import Navbar from './components/Navbar';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1 className='text-red-500'>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 min-h-screen transition-colors duration-500">
+      <Navbar />
+      <section
+        id="hero"
+        className="w-full flex items-center justify-center scroll-mt-16"
+      >
+        <Hero />
+      </section>
+      <section
+        id="experience"
+        className="w-full flex items-center justify-center scroll-mt-16"
+      >
+        <Experience />
+      </section>
+      <section
+        id="projects"
+        className="w-full flex items-center justify-center scroll-mt-16"
+      >
+        <Projects />
+      </section>
+      <section
+        id="skills"
+        className="w-full flex items-center justify-center scroll-mt-16"
+      >
+        <Skills />
+      </section>
+      <section
+        id="contact"
+        className="w-full flex items-center justify-center scroll-mt-16"
+      >
+        <Contact />
+      </section>
+    </div>
   )
 }
 
