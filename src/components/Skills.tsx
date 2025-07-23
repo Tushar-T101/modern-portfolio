@@ -141,10 +141,10 @@ const Skills: React.FC = () => {
           </div>
           {/* Grid */}
           <div
-            className={`absolute inset-0 transition-opacity duration-700 ${
+            className={`relative inset-0 transition-opacity duration-700 ${
               isGrid ? "opacity-100" : "opacity-0 pointer-events-none"
-            } flex items-center justify-center`}
-            style={{ height: "80vh" }}
+            } flex items-center justify-center mt-10`}
+            style={{ height: "100vh" }}
           >
             <div className="w-full h-full overflow-y-auto flex items-center justify-center px-4 py-6">
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 w-full overflow-visible">
