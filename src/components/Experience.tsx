@@ -8,8 +8,8 @@ const companyLogos: Record<string, string> = {
 };
 
 const headerColors: Record<string, string> = {
-	Navikenz: "bg-blue-700",
-	Incubit: "bg-blue-600",
+	Navikenz: "bg-blue-700 dark:bg-blue-900",
+	Incubit: "bg-blue-600 dark:bg-blue-800",
 };
 
 const experiences = [
@@ -44,7 +44,7 @@ const Experience: React.FC = () => {
 	return (
 		<section
 			ref={ref}
-			className={`w-full min-h-screen flex flex-col md:flex-col items-center justify-center bg-white px-0 md:px-8 py-16 transition-all duration-700 ${
+			className={`w-full min-h-screen flex flex-col md:flex-col items-center justify-center bg-white dark:bg-gray-950 px-0 md:px-8 py-16 transition-all duration-700 ${
 				inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
 			}`}
 		>
@@ -56,13 +56,11 @@ const Experience: React.FC = () => {
 						return (
 							<div
 								key={idx}
-								className="rounded-xl shadow-lg border border-blue-200 bg-white flex flex-col overflow-hidden transition-transform duration-500 hover:scale-105"
+								className="rounded-xl shadow-lg border border-blue-200 dark:border-gray-700 bg-white dark:bg-gray-900 flex flex-col overflow-hidden transition-transform duration-500 hover:scale-105"
 							>
 								{/* Card Header */}
 								<div
-									className={`h-36 flex items-center justify-center ${
-										headerColors[exp.company] || "bg-blue-200"
-									}`}
+									className={`h-36 flex items-center justify-center ${headerColors[exp.company] || "bg-blue-200 dark:bg-blue-900"}`}
 								>
 									<span className="text-xl font-bold text-white">
 										{exp.company}
@@ -70,7 +68,7 @@ const Experience: React.FC = () => {
 								</div>
 								{/* Logo */}
 								<div className="flex justify-center -mt-10 mb-4">
-									<div className="bg-white rounded-full shadow-lg flex items-center justify-center w-20 h-20 border-4 border-white">
+									<div className="bg-white dark:bg-gray-900 rounded-full shadow-lg flex items-center justify-center w-20 h-20 border-4 border-white dark:border-gray-900">
 										<img
 											src={
 												companyLogos[exp.company] ||
@@ -83,13 +81,13 @@ const Experience: React.FC = () => {
 								</div>
 								{/* Card Body */}
 								<div className="flex flex-col items-center px-6 pb-6 text-center">
-									<h3 className="text-lg font-bold text-gray-900 mb-1">
+									<h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-1">
 										{exp.role}
 									</h3>
-									<span className="text-sm text-gray-600 mb-1">
+									<span className="text-sm text-gray-600 dark:text-gray-300 mb-1">
 										{exp.period}
 									</span>
-									<span className="text-sm text-gray-400 mb-3">
+									<span className="text-sm text-gray-400 dark:text-gray-500 mb-3">
 										{exp.location}
 									</span>
 									<div
@@ -97,17 +95,17 @@ const Experience: React.FC = () => {
 											isExpanded ? "" : "max-h-32 overflow-hidden"
 										} transition-all duration-300`}
 									>
-										<ul className="list-disc text-left text-gray-700 ml-4 mb-2">
+										<ul className="list-disc text-left text-gray-700 dark:text-gray-300 ml-4 mb-2">
 											{exp.details.map((d, i) => (
 												<li key={i}>{d}</li>
 											))}
 										</ul>
 										{!isExpanded && (
-											<div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+											<div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-white dark:from-gray-900 to-transparent pointer-events-none" />
 										)}
 									</div>
 									<button
-										className="mt-2 text-blue-600 hover:underline font-medium"
+										className="mt-2 text-blue-600 dark:text-yellow-400 hover:underline font-medium"
 										onClick={() =>
 											setExpanded(isExpanded ? null : idx)
 										}

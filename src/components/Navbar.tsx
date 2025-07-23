@@ -19,27 +19,27 @@ const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="w-full bg-white shadow-lg fixed z-50 border-b border-blue-200">
+    <nav className="w-full bg-white dark:bg-gray-950 shadow-lg fixed z-50 border-b border-blue-200 dark:border-gray-800 transition-colors duration-500">
       <div className="max-w-7xl mx-auto flex items-center justify-between h-16">
         <button
           onClick={() => scrollToSection("hero")}
-          className="text-2xl font-extrabold text-blue-700 bg-transparent border-none cursor-pointer"
+          className="text-2xl font-extrabold text-blue-700 dark:text-yellow-400 bg-transparent border-none cursor-pointer"
         >
           Tushar Tugnait
         </button>
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex space-x-8 items-center">
           {navLinks.map(link => (
             <button
               key={link.name}
               onClick={() => scrollToSection(link.href.replace("#", ""))}
-              className="text-gray-900 hover:text-blue-700 font-semibold transition bg-transparent border-none cursor-pointer"
+              className="text-gray-900 dark:text-gray-100 hover:text-blue-700 dark:hover:text-yellow-400 font-semibold transition bg-transparent border-none cursor-pointer"
             >
               {link.name}
             </button>
           ))}
         </div>
         <button
-          className="md:hidden text-blue-700 focus:outline-none"
+          className="md:hidden text-blue-700 dark:text-yellow-400 focus:outline-none"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
         </button>
       </div>
       {open && (
-        <div className="md:hidden bg-white shadow-lg border-t border-blue-200">
+        <div className="md:hidden bg-white dark:bg-gray-950 shadow-lg border-t border-blue-200 dark:border-gray-800">
           <div className="flex flex-col px-4 py-2 space-y-2">
             {navLinks.map(link => (
               <button
@@ -58,7 +58,7 @@ const Navbar: React.FC = () => {
                   scrollToSection(link.href.replace("#", ""));
                   setOpen(false);
                 }}
-                className="text-gray-900 hover:text-blue-700 font-semibold transition bg-transparent border-none cursor-pointer text-left"
+                className="text-gray-900 dark:text-gray-100 hover:text-blue-700 dark:hover:text-yellow-400 font-semibold transition bg-transparent border-none cursor-pointer text-left"
               >
                 {link.name}
               </button>

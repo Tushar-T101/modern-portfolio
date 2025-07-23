@@ -82,7 +82,7 @@ const Skills: React.FC = () => {
   return (
     <section
       ref={ref}
-      className={`w-full flex flex-col items-center justify-center bg-white px-0 md:px-8 py-12 transition-all duration-700 ${
+      className={`w-full flex flex-col items-center justify-center bg-white dark:bg-gray-950 px-0 md:px-8 py-12 transition-all duration-700 ${
         inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
     >
@@ -90,7 +90,7 @@ const Skills: React.FC = () => {
       {/* Switch Toggle */}
       <div className="mb-8 flex items-center justify-center w-full">
         <label className="flex items-center cursor-pointer gap-3">
-          <span className="text-gray-900 font-bold">Marquee</span>
+          <span className="text-gray-900 dark:text-gray-100 font-bold">Marquee</span>
           <div className="relative">
             <input
               type="checkbox"
@@ -99,15 +99,15 @@ const Skills: React.FC = () => {
               className="sr-only"
             />
             <div
-              className={`w-14 h-8 bg-blue-200 rounded-full transition-colors duration-500`}
+              className={`w-14 h-8 bg-blue-200 dark:bg-gray-800 rounded-full transition-colors duration-500`}
             ></div>
             <div
-              className={`absolute left-1 top-1 w-6 h-6 bg-white rounded-full shadow transition-all duration-500 ${
-                isGrid ? "translate-x-6 bg-blue-700" : ""
+              className={`absolute left-1 top-1 w-6 h-6 bg-white dark:bg-blue-700 rounded-full shadow transition-all duration-500 ${
+                isGrid ? "translate-x-6 bg-blue-700 dark:bg-yellow-400" : ""
               }`}
             ></div>
           </div>
-          <span className="text-gray-900 font-bold">Grid</span>
+          <span className="text-gray-900 dark:text-gray-100 font-bold">Grid</span>
         </label>
       </div>
       <div
@@ -130,10 +130,10 @@ const Skills: React.FC = () => {
                 {repeatedSkills.map((skill, idx) => (
                   <div
                     key={idx}
-                    className="skill-card flex flex-col items-center justify-center bg-white border border-blue-200 px-12 py-10 rounded-2xl shadow-lg text-2xl font-bold mx-6 min-w-[220px] min-h-[220px] transition-all duration-500"
+                    className="skill-card flex flex-col items-center justify-center bg-white dark:bg-gray-900 border border-blue-200 dark:border-gray-700 px-12 py-10 rounded-2xl shadow-lg text-2xl font-bold mx-6 min-w-[220px] min-h-[220px] transition-all duration-500"
                   >
                     {skill.icon}
-                    <span className="mt-6 text-gray-900">{skill.name}</span>
+                    <span className="mt-6 text-gray-900 dark:text-gray-100">{skill.name}</span>
                   </div>
                 ))}
               </div>
@@ -151,10 +151,10 @@ const Skills: React.FC = () => {
                 {skills.map((skill, idx) => (
                   <div
                     key={idx}
-                    className="skill-card flex flex-col items-center justify-center bg-white border border-blue-200 px-2 py-2 rounded-2xl shadow-lg text-base font-bold transition-all duration-500 min-h-[60px]"
+                    className="skill-card flex flex-col items-center justify-center bg-white dark:bg-gray-900 border border-blue-200 dark:border-gray-700 px-2 py-2 rounded-2xl shadow-lg text-base font-bold transition-all duration-500 min-h-[60px]"
                   >
                     {React.cloneElement(skill.icon, { className: `${skill.icon.props.className} text-xl` })}
-                    <span className="mt-2 text-gray-900 text-sm">{skill.name}</span>
+                    <span className="mt-2 text-gray-900 dark:text-gray-100 text-sm">{skill.name}</span>
                   </div>
                 ))}
               </div>
